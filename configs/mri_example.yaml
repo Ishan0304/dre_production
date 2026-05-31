@@ -1,0 +1,17 @@
+project:
+  name: dre_production
+
+paths:
+  output_root: outputs
+  artifacts_dir: outputs/artifacts
+  reports_dir: outputs/reports
+  data_dir: data
+
+mri:
+  dataset_name: mri_subject_dataset_example
+  dataset_root: data/example/mri
+  output_dir: outputs/reports/mri_example
+  feature_settings:
+    include_intensity_features: true
+    include_texture_features: true
+

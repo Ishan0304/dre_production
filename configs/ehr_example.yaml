@@ -1,0 +1,37 @@
+project:
+  name: dre_production
+
+paths:
+  output_root: outputs
+  artifacts_dir: outputs/artifacts
+  reports_dir: outputs/reports
+  data_dir: data
+
+ehr:
+  dataset_name: ehr_patient_dataset_example
+  inputs:
+    diagnoses:
+      path: data/example/ehr/diagnoses.csv
+      required_columns:
+        - patient_id
+        - diagnosis_code
+      parse_date_columns:
+        - diagnosis_time
+    medications:
+      path: data/example/ehr/medications.csv
+      required_columns:
+        - patient_id
+        - medication_name
+      parse_date_columns:
+        - medication_start
+        - medication_end
+    seizure_events:
+      path: data/example/ehr/seizure_events.csv
+      required_columns:
+        - patient_id
+      parse_date_columns:
+        - event_time
+  outputs:
+    pipeline_dir: outputs/reports/ehr_example
+    baseline_model_dir: outputs/artifacts/ehr_example/baseline_model
+

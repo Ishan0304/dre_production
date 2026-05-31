@@ -1,0 +1,9 @@
+project:
+  name: dre_production
+
+paths:
+  output_root: outputs
+  artifacts_dir: outputs/artifacts
+  reports_dir: outputs/reports
+  data_dir: data
+

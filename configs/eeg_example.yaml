@@ -1,0 +1,20 @@
+project:
+  name: dre_production
+
+paths:
+  output_root: outputs
+  artifacts_dir: outputs/artifacts
+  reports_dir: outputs/reports
+  data_dir: data
+
+eeg:
+  dataset_name: eeg_patient_dataset_example
+  dataset_root: data/example/eeg
+  output_dir: outputs/reports/eeg_example
+  feature_settings:
+    channel_limit: null
+    max_seconds: 300.0
+    include_frequency_features: true
+    include_amplitude_features: true
+    include_basic_signal_quality: true
+

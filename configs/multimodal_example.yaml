@@ -1,0 +1,54 @@
+project:
+  name: dre_production
+
+paths:
+  output_root: outputs
+  artifacts_dir: outputs/artifacts
+  reports_dir: outputs/reports
+  data_dir: data
+
+multimodal:
+  dataset_name: multimodal_patient_dataset_example
+  output_dir: outputs/reports/multimodal_example
+  run_multimodal_model: true
+
+ehr:
+  dataset_name: multimodal_example_ehr
+  inputs:
+    diagnoses:
+      path: data/example/ehr/diagnoses.csv
+      required_columns:
+        - patient_id
+        - diagnosis_code
+      parse_date_columns:
+        - diagnosis_time
+    medications:
+      path: data/example/ehr/medications.csv
+      required_columns:
+        - patient_id
+        - medication_name
+      parse_date_columns:
+        - medication_start
+        - medication_end
+    seizure_events:
+      path: data/example/ehr/seizure_events.csv
+      required_columns:
+        - patient_id
+      parse_date_columns:
+        - event_time
+  output_dir: outputs/reports/multimodal_example/ehr
+
+mri:
+  dataset_name: multimodal_example_mri
+  dataset_root: data/example/mri
+  output_dir: outputs/reports/multimodal_example/mri
+
+eeg:
+  dataset_name: multimodal_example_eeg
+  dataset_root: data/example/eeg
+  output_dir: outputs/reports/multimodal_example/eeg
+
+multimodal_model:
+  output_dir: outputs/artifacts/multimodal_example/model
+  model_type: logistic_regression
+  target_col: ehr_likely_dre
