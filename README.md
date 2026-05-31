@@ -81,4 +81,14 @@ Tests will be run with:
 pytest
 ```
 
+## Streamlit App
+
+Run the first EHR upload app with:
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
+The app uploads structured EHR CSV files, runs the package EHR pipeline, and displays patient-level `likely_dre` results. The output is a computable inference for review, not formal adjudicated ILAE DRE.
+
 Block 0 only creates the repository scaffold. Clinical business logic, notebooks, and model training code are intentionally not implemented yet.
