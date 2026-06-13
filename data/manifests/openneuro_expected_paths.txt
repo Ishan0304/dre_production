@@ -1,0 +1,33 @@
+OpenNeuro MRI expected local structure
+
+Access:
+Public OpenNeuro dataset.
+
+Default dataset:
+ds000030
+
+Expected repo-local path:
+data/raw/openneuro/ds000030/
+
+Expected files and folders:
+data/raw/openneuro/ds000030/participants.tsv
+data/raw/openneuro/ds000030/dataset_description.json
+data/raw/openneuro/ds000030/README
+data/raw/openneuro/ds000030/CHANGES
+data/raw/openneuro/ds000030/sub-*/
+data/raw/openneuro/ds000030/sub-*/anat/*T1w.nii.gz
+
+Representative metadata columns:
+- participant_id
+- age
+- gender
+- T1w
+- rest
+- dwi
+- task availability columns when present
+
+Bootstrap command:
+python scripts/bootstrap_public_data.py --dataset openneuro
+
+Validation command:
+python scripts/validate_data_paths.py

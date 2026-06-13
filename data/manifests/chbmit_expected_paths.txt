@@ -1,0 +1,19 @@
+CHB-MIT EEG expected local structure
+
+Access:
+Public PhysioNet dataset.
+
+Expected repo-local path:
+data/raw/chbmit/
+
+Expected files and folders for the default lightweight public subset:
+data/raw/chbmit/chb01/chb01-summary.txt
+data/raw/chbmit/chb01/chb01_01.edf
+
+Full CHB-MIT contains additional patient folders and EDF recordings. The repository bootstrap script intentionally downloads a small subset by default because the full dataset is large.
+
+Bootstrap command:
+python scripts/bootstrap_public_data.py --dataset chbmit
+
+Validation command:
+python scripts/validate_data_paths.py

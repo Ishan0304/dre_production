@@ -27,10 +27,24 @@ ENV/
 # Generated outputs
 artifacts/*
 reports/*
-data/*
+outputs/*
 !artifacts/.gitkeep
 !reports/.gitkeep
+!outputs/reports/
+outputs/reports/*
+!outputs/reports/examples/
+!outputs/reports/examples/*.png
+!outputs/reports/examples/.gitkeep
+
+# Data
+data/*
 !data/.gitkeep
+!data/README.md
+!data/manifests/
+!data/manifests/*.txt
+!data/raw/
+data/raw/*
+!data/raw/.gitkeep
 
 # Editor settings
 .vscode/

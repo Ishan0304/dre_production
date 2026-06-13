@@ -1,0 +1,28 @@
+MIMIC-IV Demo expected local structure
+
+Access:
+Public PhysioNet demo dataset.
+MIMIC-IV full is credentialed and must be supplied manually after approved access.
+
+Expected repo-local paths:
+data/raw/mimic_demo/raw/diagnoses_icd.csv.gz
+data/raw/mimic_demo/raw/prescriptions.csv.gz
+data/raw/mimic_demo/ehr_pipeline/diagnoses.csv
+data/raw/mimic_demo/ehr_pipeline/medications.csv
+
+Normalized EHR pipeline columns:
+diagnoses.csv:
+- patient_id
+- diagnosis_code
+
+medications.csv:
+- patient_id
+- medication_name
+- medication_start
+- medication_end
+
+Bootstrap command:
+python scripts/bootstrap_public_data.py --dataset mimic_demo
+
+Validation command:
+python scripts/validate_data_paths.py
