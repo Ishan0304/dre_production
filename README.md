@@ -91,4 +91,19 @@ streamlit run app/streamlit_app.py
 
 The app uploads structured EHR CSV files, runs the package EHR pipeline, and displays patient-level `likely_dre` results. The output is a computable inference for review, not formal adjudicated ILAE DRE.
 
+## Dataset Setup
+
+Public bootstrap scripts write data under `data/raw/`:
+
+```bash
+python scripts/bootstrap_public_data.py --dataset mimic_demo
+python scripts/bootstrap_public_data.py --dataset chbmit
+python scripts/bootstrap_public_data.py --dataset openneuro
+python scripts/validate_data_paths.py
+```
+
+MIMIC-IV Demo is used as the public EHR bootstrap path and is normalized into `data/raw/mimic_demo/ehr_pipeline/`. The full MIMIC-IV clinical database is credentialed and is not auto-downloaded. Provide approved local files manually after completing required PhysioNet access.
+
+OpenNeuro bootstrap requires the `openneuro` CLI or `datalad`. CHB-MIT bootstrap downloads a small public EDF subset by default so the EEG path can validate a real public layout without pulling the full dataset.
+
 Block 0 only creates the repository scaffold. Clinical business logic, notebooks, and model training code are intentionally not implemented yet.

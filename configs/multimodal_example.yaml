@@ -16,14 +16,13 @@ ehr:
   dataset_name: multimodal_example_ehr
   inputs:
     diagnoses:
-      path: data/example/ehr/diagnoses.csv
+      path: data/raw/mimic_demo/ehr_pipeline/diagnoses.csv
       required_columns:
         - patient_id
         - diagnosis_code
-      parse_date_columns:
-        - diagnosis_time
+      parse_date_columns: []
     medications:
-      path: data/example/ehr/medications.csv
+      path: data/raw/mimic_demo/ehr_pipeline/medications.csv
       required_columns:
         - patient_id
         - medication_name
@@ -31,21 +30,21 @@ ehr:
         - medication_start
         - medication_end
     seizure_events:
-      path: data/example/ehr/seizure_events.csv
+      path: null
+      optional: true
       required_columns:
         - patient_id
-      parse_date_columns:
-        - event_time
+      parse_date_columns: []
   output_dir: outputs/reports/multimodal_example/ehr
 
 mri:
   dataset_name: multimodal_example_mri
-  dataset_root: data/example/mri
+  dataset_root: data/raw/openneuro/ds000030
   output_dir: outputs/reports/multimodal_example/mri
 
 eeg:
   dataset_name: multimodal_example_eeg
-  dataset_root: data/example/eeg
+  dataset_root: data/raw/chbmit
   output_dir: outputs/reports/multimodal_example/eeg
 
 multimodal_model:

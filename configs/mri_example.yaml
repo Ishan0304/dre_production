@@ -9,9 +9,8 @@ paths:
 
 mri:
   dataset_name: mri_subject_dataset_example
-  dataset_root: data/example/mri
+  dataset_root: data/raw/openneuro/ds000030
   output_dir: outputs/reports/mri_example
   feature_settings:
     include_intensity_features: true
     include_texture_features: true
-

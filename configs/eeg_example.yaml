@@ -9,7 +9,7 @@ paths:
 
 eeg:
   dataset_name: eeg_patient_dataset_example
-  dataset_root: data/example/eeg
+  dataset_root: data/raw/chbmit
   output_dir: outputs/reports/eeg_example
   feature_settings:
     channel_limit: null
@@ -17,4 +17,3 @@ eeg:
     include_frequency_features: true
     include_amplitude_features: true
     include_basic_signal_quality: true
-

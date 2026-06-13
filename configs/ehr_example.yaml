@@ -11,14 +11,13 @@ ehr:
   dataset_name: ehr_patient_dataset_example
   inputs:
     diagnoses:
-      path: data/example/ehr/diagnoses.csv
+      path: data/raw/mimic_demo/ehr_pipeline/diagnoses.csv
       required_columns:
         - patient_id
         - diagnosis_code
-      parse_date_columns:
-        - diagnosis_time
+      parse_date_columns: []
     medications:
-      path: data/example/ehr/medications.csv
+      path: data/raw/mimic_demo/ehr_pipeline/medications.csv
       required_columns:
         - patient_id
         - medication_name
@@ -26,12 +25,11 @@ ehr:
         - medication_start
         - medication_end
     seizure_events:
-      path: data/example/ehr/seizure_events.csv
+      path: null
+      optional: true
       required_columns:
         - patient_id
-      parse_date_columns:
-        - event_time
+      parse_date_columns: []
   outputs:
     pipeline_dir: outputs/reports/ehr_example
     baseline_model_dir: outputs/artifacts/ehr_example/baseline_model
-
